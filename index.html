@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вікі вашої гри</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #1e1e1e;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+
+        h1 {
+            color: #ffcc00;
+        }
+
+        h2 {
+            color: #ffffff
+        }
+
+        h3 {
+            color: #ff0000
+        }
+
+        h4 {
+            color: #ffcc00
+        }
+
+        h5 {
+            color: #28a745
+        }
+
+        .install-btn, .wiki-btn {
+            padding: 15px 30px;
+            font-size: 18px;
+            color: white;
+            background-color: gray;
+            border: none;
+            cursor: not-allowed;
+            border-radius: 5px;
+            transition: background 0.3s, transform 0.2s;
+            margin: 10px;
+        }
+
+            .install-btn.active, .wiki-btn.active {
+                background-color: #28a745;
+                cursor: pointer;
+            }
+
+            .install-btn:hover.active, .wiki-btn:hover.active {
+                background-color: #218838;
+                transform: scale(1.05);
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ласкаво просимо на вікі нашої гри!</h1>
+
+        <!-- Кнопка для переходу до вікі -->
+        <button id="wikiBtn" class="wiki-btn active">Перейти до Вікі</button>
+    
+
+        <h3><strong>стадія гри:</strong> в розробці</h3>
+
+        <p><strong>Ціна гри:</strong> 100 грн або приблизно 2,40 Доларів США.</p>
+
+        <!-- Кнопка встановлення (зараз заблокована) -->
+        <button id="installBtn" class="install-btn">Відкрити Steam</button>
+
+        
+        </div>
+    <script>
+        document.getElementById("installBtn").addEventListener("click", function () {
+            if (!this.classList.contains("active")) return; // Якщо кнопка неактивна, нічого не робимо
+            window.open("https://store.steampowered.com", "_blank");
+        });
+
+        document.getElementById("wikiBtn").addEventListener("click", function () {
+            // Перейти на сторінку вікі
+            window.open("wiki.html", "_blank"); // Змінити на ім'я вашого HTML-файлу
+        });
+    </script>
+</body>
+</html>
